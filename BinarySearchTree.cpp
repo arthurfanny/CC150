@@ -1,5 +1,48 @@
 //Binary Search Tree Algortihm
 
+//Public way of expressing the binary search
+
+struct node{
+	int val;
+	node *lchild,*rchild,*parent；
+	Node(int v = 0, Node *l = NULL, Node *r = NULL) : val(v), left(l), right(r) {} }
+
+void preorder(Node *root){
+	if(root == NULL) return;
+	printf("%d", root->val);
+	preorder(root->left);
+	preorder(root->right);
+}
+
+void inorder(Node *root){
+	if(root == NULL) return;
+	inorder(root->right);
+	printf("%d",root->val);
+	inorder(root->left);
+}
+
+
+void postorder(Node *node){
+	if(root == NULL) return;
+	postorder(root->left);
+	postorder(root->right);
+	printf("d%",root->val);
+}
+
+
+//using stack to simulate the preorder of BST
+void preorder(Node *root){
+	if(root == NULL) return;
+	stack<*Node> stk;
+	while(!stk.empty()){
+		Node *p = stk.top();
+		stk.pop();
+		printf(%d",p->val);
+		if(p->right) stk.push(p->right);
+		if(p->left) stk.push(p-left);
+	}
+}
+
 #include <iostream>
 #include <cstdlib>
 using namespace std;
